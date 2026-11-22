@@ -120,7 +120,7 @@ Each result is tagged `actual`, `estimate` or `recommendation`. Forecasts use or
 
 1. Create a Postgres database (Neon, Supabase, RDS…) and set `DATABASE_URL` (pooled) and `DIRECT_URL` (direct) on the project.
 2. Set `APP_URL`, `AUTH_SECRET`, `ENCRYPTION_KEY`, and any provider keys (`AGNES_API_KEY`, `OPENAI_API_KEY`, `HF_TOKEN`, `PAYSTACK_*`, `FLUTTERWAVE_*`, `STRIPE_*`).
-3. Set `CRON_SECRET` and keep `vercel.json`'s cron entry (`/api/cron/run` every 10 minutes) — serverless cannot host the persistent worker.
+3. Set `CRON_SECRET` and keep `vercel.json`'s cron entry (`/api/cron/run`; daily on Vercel Hobby, tighten it on Pro) — serverless cannot host the persistent worker.
 4. Run `npm run db:migrate` once against the production database, then optionally `npm run db:seed` with `SEED_DEMO=0`.
 5. Deploy the `main` branch. Health check: `GET /api/health`.
 
