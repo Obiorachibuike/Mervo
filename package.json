@@ -1,0 +1,53 @@
+{
+  "name": "mervo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MERVO — Intelligent Business Management and AI-Powered POS Platform",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p 3000",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/server/db/migrate.ts",
+    "db:seed": "tsx src/server/db/seed.ts",
+    "worker": "tsx src/server/jobs/worker.ts",
+    "verify": "npm run typecheck && npm run test && npm run build"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.8",
+    "@hookform/resolvers": "^5.2.2",
+    "@tanstack/react-query": "^5.90.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "drizzle-orm": "^0.44.5",
+    "lucide-react": "^0.468.0",
+    "next": "^15.5.29",
+    "pg": "^8.16.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hook-form": "^7.64.0",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.10",
+    "@types/pg": "^8.15.5",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "autoprefixer": "^10.4.21",
+    "drizzle-kit": "^0.31.5",
+    "eslint": "^9.37.0",
+    "eslint-config-next": "^15.5.29",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
